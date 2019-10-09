@@ -29,9 +29,15 @@ public class HelloworldController {
         this.iRabbitConsumerService = iRabbitConsumerService;
     }
 
+    /**
+     * 发送10条消息
+     *
+     * @param msg 消息
+     * @return JsonResult
+     */
     @GetMapping("/send")
     public JsonResult sendMessage(@RequestParam("msg") String msg) {
-        System.out.println("*****" + msg);
+        System.out.println("msg: " + msg);
         for (int i = 0; i < 10; i++) {
             publisher.produceMsg(msg + " No." + i);
         }
