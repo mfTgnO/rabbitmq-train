@@ -1,0 +1,15 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  rabbitmq:
+    host: 192.168.10.75
+    port: 5672
+    username: admin
+    password: mypassword
+jsa:
+  rabbitmq:
+    queue: jsa.queue1
+    exchange: jsa.direct1
+    routingkey: jsa.routingkey1
+server:
+  port: 8888
