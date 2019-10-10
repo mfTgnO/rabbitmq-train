@@ -44,6 +44,21 @@ public class HelloworldController {
         return new JsonResult<>("Successfully Msg Sent");
     }
 
+    /**
+     * Time to Live
+     *
+     * @param msg message
+     * @return JsonResult
+     */
+    @GetMapping("/sendTTL")
+    public JsonResult sendMessageTTL(@RequestParam("msg") String msg) {
+        System.out.println("msg: " + msg);
+        for (int i = 0; i < 10; i++) {
+            publisher.produceMsgV2(msg + " No." + i);
+        }
+        return new JsonResult<>("Successfully Msg Sent");
+    }
+
     @GetMapping("/producerV1")
     public JsonResult producerV1() throws IOException, TimeoutException {
         iRabbitProducerService.producerV1();

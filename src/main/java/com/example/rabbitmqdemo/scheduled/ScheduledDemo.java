@@ -43,6 +43,10 @@ public class ScheduledDemo {
         System.out.println(LocalDateTime.now());
         System.out.println("Every minute task - " + System.currentTimeMillis() / 1000);
     }*/
+
+    /**
+     * 5000 milliseconds
+     */
     @Scheduled(fixedRate = 5000)
     public void pubMsgTask() {
         LocalDateTime localDateTime = LocalDateTime.now();
