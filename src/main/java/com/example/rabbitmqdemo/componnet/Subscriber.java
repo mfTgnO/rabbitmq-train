@@ -5,6 +5,8 @@ import com.example.rabbitmqdemo.service.IMsgService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+
 /**
  * @createDate: 2019-08-30 15:38
  * @description:
@@ -22,6 +24,7 @@ public class Subscriber {
         System.out.println("Received Message: " + msg);
         Msg m = new Msg();
         m.setMsg(msg);
+        m.setCreateTime(LocalDateTime.now());
         iMsgService.save(m);
     }
 }

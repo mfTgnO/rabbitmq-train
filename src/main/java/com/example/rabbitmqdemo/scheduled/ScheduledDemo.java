@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
-import java.time.LocalDateTime;
+import java.util.UUID;
 
 /**
  * 定时任务
@@ -49,8 +49,8 @@ public class ScheduledDemo {
      */
     @Scheduled(fixedRate = 5000)
     public void pubMsgTask() {
-        LocalDateTime localDateTime = LocalDateTime.now();
-        publisher.produceMsg(localDateTime.toString());
-        System.out.println("Msg: " + localDateTime.toString());
+        UUID uuid = UUID.randomUUID();
+        publisher.produceMsg(uuid.toString());
+        System.out.println("Msg: " + uuid.toString());
     }
 }

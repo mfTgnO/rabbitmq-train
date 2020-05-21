@@ -24,9 +24,9 @@ public class Msg implements Serializable {
     @TableField(value = "msg")
     private String msg;
 
-    @TableField(value = "gmt_create")
-    private LocalDateTime gmtCreate;
+    @TableField(value = "create_time")
+    private LocalDateTime createTime;
 
-    @TableField(value = "gmt_modified")
-    private LocalDateTime gmtModified;
+    @TableField(value = "update_time")
+    private LocalDateTime updateTime;
 }
